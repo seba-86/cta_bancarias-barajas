@@ -28,6 +28,7 @@ class Baraja
         repartir1 << self.cartas
         i += 1
         end
+        return repartir1
     end
         
 end
