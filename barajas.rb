@@ -1,38 +1,38 @@
 require_relative 'carta'
 
 class Baraja
-    attr_accessor :cards
 
-    def initialize(cards)
-        @cards = []
+    attr_accessor :cartas
+
+    def initialize
+        @cartas =[]
         i = 0
         while i < 52
-            cards << Carta.new(rand(1..13),["C","D","E","T"].sample).action
-            i +=1 
+        cartas << Carta.new(rand(1..13),["C","D","E","T"].sample)
+        i +=1 
         end
-    
     end
-
+       
     def barajar 
-        self.cards = self.cards.shuffle
+        self.cartas = cartas.shuffle
     end
 
     def sacar 
-        self.cards = self.cards.pop
+        self.cartas = cartas.pop
     end
 
     def repartir_mano
         repartir1 = []
         i = 0
         while i < 5 
-        repartir1 << self.sacar
+        repartir1 << self.cartas
         i += 1
         end
     end
-
+        
 end
 
-
-
-
-
+prueba = Baraja.new
+prueba.barajar
+prueba.sacar
+prueba.repartir_mano
